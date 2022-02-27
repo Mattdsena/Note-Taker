@@ -1,6 +1,6 @@
 const express = require('express');
-const path = require("path");
-const fs = require("fs");
+const path = require('path');
+const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -25,7 +25,7 @@ app.post("/api/notes", (req, res) => {
   let noteReq = req.body;
   let notes = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
   idNumber = idNumber + 1;
-  // let noteId = notes.length;
+
   const newNote = {
     id: idNumber,
     title: noteReq.title,
